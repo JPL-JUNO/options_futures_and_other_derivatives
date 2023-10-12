@@ -1,2 +1,10 @@
 \usepackage{ctex}
 \usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\makeatletter
+\let\old@endpart\@endpart
+\renewcommand\@endpart[1][]{%
+\begin{quote}#1\end{quote}%
+\old@endpart}
+\makeatother
+\usepackage{hyperref}
