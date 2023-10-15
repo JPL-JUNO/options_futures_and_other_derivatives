@@ -5,22 +5,37 @@
 \begin{document}
 \begin{figure}
     \centering
-    \begin{tikzpicture}[scale=.6]
-        \draw[<->] (40, 13)--(40, 0)--(65, 0);
-        \draw (48, -2)--(60, 10);
-        \draw[dotted] (40, 6)--(50, 6)--(58, -2);
-        \draw (42, -2)--(50, 6)--(60, 6);
-        \foreach \y in {6, 12}{
-                \node[left] at (40, \y) {\y};
-            }
-        \foreach \x in {44, 48, 50, 56}{
-                \filldraw (\x, 0) circle (3pt) node[below  right]{\tiny $(\x, 0)$};
-            }
-        \draw[dotted] (50, 0)--(50, 6);
-        \node[above right] at (53, 6) {\tiny 初始头寸};
-        \draw[red, thick] (46, -2)--(60, 12)--(63, 12);
-        \node[above right] at (60, 12) {\tiny 向上挪仓后的头寸};
+    \begin{tikzpicture}[scale=3]
+        \draw[<->] (0, 2)--(0,0)--(5, 0);
+        \draw[thick] (0, 0)--(3, 0)--(4.5, 1.5);
+        \draw (0, 0.02) .. controls (3., 0.05) .. (4.5, 1.52);
+        \draw (0, 0.1) .. controls (3., 0.25) .. (4.5, 1.62);
+        \draw (0, 0.15) .. controls (3., 0.35) .. (4.5, 1.75);
+        \draw[dotted] (3, 0)--(3,.58);
+        \node[above left] at (4.5, 1.55) {\tiny 9 个月曲线};
+        \node at (2.1, 0.25) {\tiny 6 个月曲线};
+        \node at (1.5, 0.05) {\tiny 3 个月曲线};
+        \filldraw (3,0) circle (1pt) node[below] {行权价};
+        \node[below] at (1.3, 0) {内在价值};
+        % \draw[->](55, -8)--(55, 5);
+        % \draw (55, -7)--(60, -7)--(67, 0)--(71, 4);
+        % \draw (55, -3)--(70, -3)--(73, 0)--(77, 4);
+        % \node[above right] at (71, 4) {实值看涨期权};
+        % \node[above right] at (77, 4) {虚值看涨期权};
+        % \filldraw (55, 0) circle (2pt) node[below left] {$O$};
+        % \foreach \x in {60, 65, 67, 70, 73}{
+        %         \filldraw (\x, 0) circle (2pt) node[below right] {\tiny $(\x, 0)$};
+        %     }
+        % \foreach \y in {-3, -7}{
+        %         \node[left] at (55, \y) {$\y$};
+        %     }
+        % \draw[dotted] (60, 0)--(60, -7);
+        % \draw[dotted] (70, 0)--(70, -3);
+        % \draw[dotted, red, thick] (68, 1)--(68, -3);
+        % \filldraw[red] (65, 0) circle (2pt) node[above left] {现价};
+        % \filldraw[red] (64, -3) circle (5pt) node[below right] {平衡点};
     \end{tikzpicture}
-    \caption{比较：初始头寸与向上挪仓后的头寸}
+    \caption{随着到期日的临近，更低的曲线开始向内在价值线靠拢。期权价格开始等于其内在价值}
+    \label{fig3.1}
 \end{figure}
 \end{document}
